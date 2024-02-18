@@ -1,0 +1,116 @@
+
+
+:root {
+    /* grid variables */
+    --rows: 11;
+    --columns: 11;
+    --minimum-tile-size: 40px;
+
+    /* d pad variables */
+    --button-size: 60px;
+    --button-color: #888888;
+    --button-pressed-color: #a7a7a7;
+
+    /* calculated variables */
+    --min-height: calc(var(--minimum-tile-size) * var(--rows));
+    --min-width: calc(var(--minimum-tile-size) * var(--columns));
+}
+
+* {
+    margin: 0;
+    background-color: #1F1F1F;
+}
+
+.world {
+
+    /* responsive world size */
+    min-height: var(--min-height);
+    min-width: var(--min-width);
+
+    justify-content: center;
+    display: flex;
+    margin-top: 50px;
+    padding: 10px;
+}
+
+
+.grid {
+    width: fit-content;
+    display: grid;
+    grid-template-columns: repeat(var(--columns), 1fr);
+    grid-template-rows: repeat(var(--rows), 1fr);
+}
+
+.grid div {
+    height: var(--minimum-tile-size);
+    width: var(--minimum-tile-size);
+    background-color: #333333;
+}
+
+.grid div:nth-child(2n) {
+    background-color: #444444;
+}
+
+
+
+
+
+
+
+/* controls */
+
+.controls {
+
+    /* responsive world size */
+    min-width: var(--min-width);
+
+    /* center */
+    display: flex;
+    justify-content: center;
+}
+
+.movement {
+
+    max-width: 400px;
+    padding: 10px;
+    gap: 5px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.button {
+    min-height: var(--button-size);
+    min-width: var(--button-size);
+
+    border: none;
+
+    border-radius: 0.5rem;
+
+    background-color: var(--button-pressed-color);
+}
+
+button:not(:active) {
+    background-color: var(--button-color);
+    transition: background-color 0.15s ease;
+}
+
+.button-up {
+    grid-column: 2;
+}
+
+.button-left {
+    grid-column: 1;
+}
+
+.button-down {
+    grid-column: 2;
+}
+
+.button-right {
+    grid-column: 3;
+}
+
+.hide {
+    display: none;
+}
