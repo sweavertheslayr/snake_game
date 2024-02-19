@@ -1,9 +1,9 @@
 import { getInputDirection } from "./input.js";
 import { rows, columns } from "./grid.js";
 
-export const SNAKE_SPEED = 10;
+export const SNAKE_SPEED = 5;
 
-const snakeBody = [{ x: 11, y: 11 }];
+const snakeBody = [{ x: 8, y: 8 }];
 
 export function update() {
     const inputDirection = getInputDirection();
