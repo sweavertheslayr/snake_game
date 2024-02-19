@@ -5,16 +5,15 @@ import { draw as drawGrid, rows, columns } from "./grid.js";
 const root = document.documentElement;
 
 const gameBoard = document.getElementById('game-board');
+const grid = document.querySelector('.grid');
+
 let lastRenderTime = 0;
 
 // set grid size
 root.style.setProperty('--rows', rows);
 root.style.setProperty('--columns', columns);
 
-
-const grid = document.querySelector('.grid');
 drawGrid(grid);
-
 
 function main(currentTime) {
     const deltaTime = (currentTime - lastRenderTime) / 1000;
@@ -24,7 +23,6 @@ function main(currentTime) {
     if (deltaTime < 1 / SNAKE_SPEED) return;
 
     lastRenderTime = currentTime;
-    console.log('Render');
 
     update();
     draw();
@@ -38,6 +36,5 @@ function draw() {
     gameBoard.innerHTML = '';
     drawSnake(gameBoard);
 }
-
 
 window.requestAnimationFrame(main);

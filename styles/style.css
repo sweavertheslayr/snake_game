@@ -23,6 +23,7 @@
 * {
     margin: 0;
     background-color: #1F1F1F;
+    user-select: none;
 }
 
 .world {

@@ -12,7 +12,6 @@ export function update() {
         snakeBody[i+1] = { ...snakeBody[i] };
     }
 
-
     snakeBody[0].x += inputDirection.x;
     snakeBody[0].y += inputDirection.y;
 }
