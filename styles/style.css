@@ -31,6 +31,8 @@
     --color-background: #59797D; 
     --button-color: #93B5A2;
     --button-pressed-color: #B8D1C1;
+    --color-game-text-background: rgba(255, 83, 103, 80%);
+    --color-game-text: rgba(147, 181, 162, 80%);
 }
 
 .palletes {
@@ -52,6 +54,14 @@
     --color-food: #FF5367; */
 
 }
+@keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
 
 * {
     margin: 0;
@@ -90,6 +100,21 @@
     width: var(--tile-size);
     box-sizing: border-box;
     border: rgba(22, 22, 22, 30%) 1px solid;
+}
+
+.game-text {
+    position: absolute;
+    top: 24%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2; /* Ensure it's above the game board */
+    text-align: center;
+    border-radius: 2rem;
+    padding: 3rem;
+
+    box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 50%); 
+    color: var(--color-game-text);
+    background-color: var(--color-game-text-background);
 }
 
 /* controls */
@@ -152,6 +177,10 @@ button:not(:active) {
 
 .button-right {
     grid-column: 3;
+}
+
+.fade {
+    animation: fadeOut 0.5s ease;
 }
 
 .hide {

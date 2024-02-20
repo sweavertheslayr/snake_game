@@ -1,7 +1,7 @@
 import { addInput } from "./snake.js"
 
-let inputDirection = { x: 0, y: 0 };
-let lastInputDirection = { x: 0, y: -1 };
+let inputDirection = { x: 0, y: -1 };
+let lastInputDirection = { x: 0, y: 0 };
 export let pressedButton = false;
 
 window.addEventListener('keydown', e => {
