@@ -3,12 +3,14 @@ import { update as updateSnake, draw as drawSnake, dead as snakeDead, SNAKE_SPEE
 import { update as updateFood, draw as drawFood } from "./food.js";
 import { draw as drawGrid, rows, columns } from "./grid.js";
 import { init, getPressedButton } from "./input.js";
+import { addScore } from "./score.js";
 
 const root = document.documentElement;
 
 const gameBoard = document.getElementById('game-board');
 const grid = document.querySelector('.grid');
 const gameText = document.querySelector('.game-text');
+
 
 let lastRenderTime = 0;
 
@@ -18,6 +20,8 @@ root.style.setProperty('--columns', columns);
 
 drawGrid(grid);
 init();
+addScore(0);
+
 
 // prevent from selecting things
 document.addEventListener('contextmenu', function (e) {
